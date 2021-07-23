@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">HelloUsers</string>
+    <string name="title_home">Пользователи</string>
+    <string name="title_dashboard">Карточка пользователя</string>
+    <string name="title_dashboard_shrink">Карточка </string>
+    <string name="title_notifications">О программе</string>
+</resources>
