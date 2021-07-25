@@ -2,16 +2,23 @@ package com.example.hellousers
 
 import android.os.Bundle
 import android.util.Log
+import android.app.AlertDialog
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.hellousers.data.common.Common
+import com.example.hellousers.data.retrofit.RetrofitServices
 import com.example.hellousers.databinding.ActivityMainBinding
+import dmax.dialog.SpotsDialog
 
 class MainActivity : AppCompatActivity() {
 
+    lateinit var dialog: AlertDialog
+
+    private lateinit var mService: RetrofitServices
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,6 +36,9 @@ class MainActivity : AppCompatActivity() {
                 R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications))
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+        //mService = Common.retrofitService
+        dialog = SpotsDialog.Builder().setContext(this).build()
 
 
     }
