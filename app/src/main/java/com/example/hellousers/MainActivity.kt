@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
-        //mService = Common.retrofitService
+        mService = Common.retrofitService
         dialog = SpotsDialog.Builder().setContext(this).build()
 
 

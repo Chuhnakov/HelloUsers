@@ -8,11 +8,13 @@ object RetrofitClient {
     private var retrofit: Retrofit? = null
 
     fun getClient(baseUrl: String): Retrofit {
-        retrofit ?: Retrofit.Builder()
-            .baseUrl(baseUrl)
-            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
+        if (retrofit == null) {
+            retrofit = Retrofit.Builder()
+                .baseUrl(baseUrl)
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create())
+                .build()
+        }
         return retrofit!!
     }
 }
