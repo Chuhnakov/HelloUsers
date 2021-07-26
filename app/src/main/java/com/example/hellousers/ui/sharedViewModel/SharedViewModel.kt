@@ -12,8 +12,10 @@ class SharedViewModel(application: Application) : AndroidViewModel(application) 
 
 //   private val mService: RetrofitServices = Common.retrofitService
     private var usersData: MutableLiveData<MutableList<User>>  = MutableLiveData()
-// Service обьявить в MainActivity от туда подтягивать данные
+    //TODO мб Service обьявить в MainActivity от туда подтягивать данные
     // в MainActivity отоброжать окно загрузки оформить методы Responce AND GetUsersList
+    // прошарить адекватно ли common наградить методами забирать
+    // данные чтоб View Model не знала про сервер и работу с ним
     fun setUsersData(item: MutableList<User>?) {
         usersData!!.value = item
 
